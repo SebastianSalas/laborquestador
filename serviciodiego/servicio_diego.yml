@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: servicio-diego-pod
+  labels:
+    app: servicio-diego
+spec:
+  containers:
+    - name: servicio-diego-container
+      image: diegovictoria/servicio-diego:latest
+      ports:
+        - containerPort: 3002
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: servicio-diego-service
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: 3002
+      protocol: TCP
+  selector:
+    app: servicio-diego
