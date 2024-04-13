@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: servicio-sebas-pod
+  labels:
+    app: servicio-sebas
+spec:
+  containers:
+    - name: servicio-sebas-container
+      image: sebastiansalas/servicio-sebas:latest
+      ports:
+        - containerPort: 3000
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: servicio-sebas-service
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: 3000
+      protocol: TCP
+  selector:
+    app: servicio-sebas
