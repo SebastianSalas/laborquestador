@@ -3,7 +3,7 @@ import httpx
 
 app = FastAPI()
 
-# Endpoint en Servicio Orquetador para iniciar la orquestación
+
 @app.get("/orquestar")
 async def orquestar():
     async with httpx.AsyncClient() as client:
