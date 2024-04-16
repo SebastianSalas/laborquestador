@@ -7,7 +7,7 @@ metadata:
 spec:
   containers:
     - name: orquestador-container
-      image: fredyball/microrquesta:latest
+      image: sebastiansalas/orquestador:latest
       ports:
         - containerPort: 8000
 
@@ -24,4 +24,4 @@ spec:
       targetPort: 8000
       protocol: TCP
   selector:
-    app: servicio-orquestador
+    app: orquestador
