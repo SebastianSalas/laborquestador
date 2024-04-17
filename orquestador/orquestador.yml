@@ -22,6 +22,7 @@ spec:
   ports:
     - port: 80
       targetPort: 8000
+      nodePort: 30000
       protocol: TCP
   selector:
     app: orquestador
