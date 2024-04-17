@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: servicio-angie-pod
+  labels:
+    app: servicio-angie
+spec:
+  containers:
+    - name: servicio-angie-container
+      image: natico/servicio-angie:latest
+      ports:
+        -containerPort: 3002
+
+
+----
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: servicio-angie-service
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      tragetPort: 3002
+      protocol: TCP
+    selector:
+      app: servicio-angie
