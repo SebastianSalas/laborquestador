@@ -7,9 +7,9 @@ metadata:
 spec:
   containers:
     - name: servicio-sebas-container
-      image: sebastiansalas/servicio-sebas:latest
+      image: sebastiansalas/servicio-sebas:v1
       ports:
-        - containerPort: 3000
+        - containerPort: 3001
 
 ---
 
@@ -21,7 +21,7 @@ spec:
   type: ClusterIP
   ports:
     - port: 80
-      targetPort: 3000
+      targetPort: 3001
       protocol: TCP
   selector:
     app: servicio-sebas

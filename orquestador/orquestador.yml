@@ -7,12 +7,11 @@ metadata:
 spec:
   containers:
     - name: orquestador-container
-      image: sebastiansalas/orquestador:latest
+      image: sebastiansalas/orquestador:v1
       ports:
         - containerPort: 8000
 
 ---
-
 apiVersion: v1
 kind: Service
 metadata:
